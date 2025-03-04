@@ -5,7 +5,7 @@ import { DIVINATION_RULES_API, Rule } from './types';
 export const getRulesByQuery = async (query: string): Promise<Rule[]> => {
   const encodedQueryString = encodeURIComponent(query);
 
-  const urlQuery = DIVINATION_RULES_API + `/search/${encodedQueryString}`;
+  const urlQuery = DIVINATION_RULES_API + `/search?query=${encodedQueryString}`;
 
   const res = await fetch(urlQuery)
     .then((response) => (response.body ? response.json() : []))
