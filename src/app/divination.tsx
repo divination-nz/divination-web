@@ -43,7 +43,9 @@ export const Divination: FC = () => {
           width={150}
           height={150}
         />
-        <h1 className='text-7xl'>{'Divination'}</h1>
+        <h1 className='text-7xl font-[family-name:var(--font-beleren)]'>
+          {'Divination'}
+        </h1>
         <SearchBar
           onTypingComplete={handleTypingComplete}
           onChange={handleChange}
