@@ -1,14 +1,18 @@
 'use server';
 
-import { Rule } from "./types";
+import { DIVINATION_RULES_API, Rule } from './types';
 
 export const getRulesByQuery = async (query: string): Promise<Rule[]> => {
-  return [{
-    "id": "103.2c",
-    "description": "In a Commander game, each player puts their commander from their deck face up into the command zone. See rule 903.6."
-  },
-  {
-    "id": "103.4c",
-    "description": "In a Commander game, each player’s starting life total is 40."
-  }] as Rule[]
-}
+  const encodedQueryString = encodeURIComponent(query);
+
+  const urlQuery = DIVINATION_RULES_API + `/search/${encodedQueryString}`;
+
+  const res = await fetch(urlQuery)
+    .then((response) => (response.body ? response.json() : []))
+    .catch((error) => {
+      console.error(error);
+      return [];
+    });
+
+  return res;
+};
