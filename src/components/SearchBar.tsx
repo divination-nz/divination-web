@@ -31,7 +31,7 @@ export const SearchBar: FC<SearchBarProps> = ({
   };
 
   return (
-    <div className='relative'>
+    <div className='relative w-full'>
       <Icon
         className='absolute top-3 left-2'
         icon='material-symbols:search-rounded'
