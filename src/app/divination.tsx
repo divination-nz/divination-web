@@ -5,6 +5,7 @@ import { Rule } from '@/api/types';
 import { RulesContainer } from '@/components/RulesContainer';
 import { SearchBar } from '@/components/SearchBar';
 import { FC, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const MIN_LENGTH = 3;
 
@@ -33,15 +34,22 @@ export const Divination: FC = () => {
 
   return (
     <div className='flex flex-col sm:flex-row flex-grow h-full w-full gap-2 items-stretch justify-start sm:justify-around'>
-      <div className='flex flex-col gap-2 items-center justify-center'>
+      <div className='flex flex-col gap-4 items-center justify-center'>
+        <Image
+          aria-hidden
+          className='hidden sm:block invert dark:invert-0'
+          src='/planeswalker-book.svg'
+          alt='Planeswalker Symbol on a Closed Book'
+          width={150}
+          height={150}
+        />
         <h1 className='text-7xl'>{'Divination'}</h1>
-        <h2 className='text-3xl'>{'Search the rules!'}</h2>
         <SearchBar
           onTypingComplete={handleTypingComplete}
           onChange={handleChange}
         />
       </div>
-      <RulesContainer rules={rules} />
+      {!!rules.length && <RulesContainer rules={rules} />}
     </div>
   );
 };
