@@ -13,7 +13,7 @@ export const RulesContainer: FC<RulesContainerProps> = ({ rules }) => {
       {rules.map((rule) => (
         <div
           key={rule.id}
-          className='flex flex-col min-h-24 p-2 items-start border-solid border-2 border-black dark:border-white'
+          className='flex flex-col flex-shrink-0 min-h-24 p-2 items-start border-solid border-2 border-black dark:border-white'
         >
           {rule.description}
         </div>
