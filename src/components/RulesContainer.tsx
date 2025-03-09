@@ -10,7 +10,7 @@ interface RulesContainerProps {
 
 export const RulesContainer: FC<RulesContainerProps> = ({ rules }) => {
   return (
-    <div className='flex flex-col overflow-scroll h-full w-full gap-2 p-2 border-solid border-2 border-black dark:border-white'>
+    <div className='flex flex-col overflow-y-scroll overflow-x-hidden h-full w-full gap-2 p-2 border-solid border-2 border-black dark:border-white'>
       {rules.map((rule) => (
         <RulesEntry key={rule.id} rule={rule} />
       ))}
