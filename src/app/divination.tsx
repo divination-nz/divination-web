@@ -33,7 +33,7 @@ export const Divination: FC = () => {
   };
 
   return (
-    <div className='flex flex-col sm:flex-row flex-grow h-full w-full gap-2 items-stretch justify-start sm:justify-around'>
+    <div className='flex flex-col sm:flex-row flex-grow h-full w-full gap-4 items-stretch justify-start sm:justify-around'>
       <div className='flex flex-col gap-4 items-center justify-center'>
         <Image
           aria-hidden
