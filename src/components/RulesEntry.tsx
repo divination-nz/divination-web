@@ -15,7 +15,7 @@ const constructRulesUrl = (rule: Rule) => {
     ? rule.id
     : `${rule.id}.`;
 
-  return `https://rules.cardspy.nz/#:~:text=${encodeURI([formattedId, rule.description].join(' '))}`;
+  return `https://rules.cardspy.nz/#:~:text=${encodeURIComponent([formattedId, rule.description].join(' '))}`;
 };
 
 export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
