@@ -28,7 +28,7 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
       </div>
       <div className='flex flex-col items-start justify-between h-full w-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-base'>
         <div>{rule.description}</div>
-        <div className='text-blue-400'>
+        <div className='text-blue-600 dark:text-blue-400'>
           <a
             href={rulesUrl}
             target='_blank'
