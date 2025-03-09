@@ -22,23 +22,23 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
   const rulesUrl = constructRulesUrl(rule);
 
   return (
-    <div className='flex flex-col justify-between flex-shrink-0 gap-2 min-h-16 sm:min-h-20 relative items-start border-solid border-2 border-black dark:border-white'>
-      <div className='absolute top-0 flex justify-center text-sm sm:text-base bg-slate-300 dark:bg-slate-500 h-full font-bold [writing-mode:vertical-lr]'>
+    <div className='relative flex-shrink-0 min-h-16 sm:min-h-20 border-solid border-2 border-black dark:border-white'>
+      <div className='absolute top-0 right-0 flex justify-center text-sm sm:text-base bg-slate-300 dark:bg-slate-500 h-full font-bold [writing-mode:sideways-lr]'>
         {rule.id}
       </div>
-      <div className='py-2 pl-6 sm:pl-7 text-sm sm:text-base'>
-        {rule.description}
-      </div>
-      <div className='py-2 pl-6 sm:pl-7 text-sm sm:text-base text-blue-400'>
-        <a
-          href={rulesUrl}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex items-center gap-1'
-        >
-          See in rulebook
-          <Icon icon='tabler:external-link' />
-        </a>
+      <div className='flex flex-col items-start justify-between h-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-base'>
+        <div>{rule.description}</div>
+        <div className='text-blue-400'>
+          <a
+            href={rulesUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-1'
+          >
+            Open in rulebook
+            <Icon icon='tabler:external-link' />
+          </a>
+        </div>
       </div>
     </div>
   );
