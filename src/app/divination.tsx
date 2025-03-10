@@ -8,6 +8,7 @@ import { FC, useCallback, useEffect, useState, useTransition } from 'react';
 import Image from 'next/image';
 import { LoadingImage } from '@/components/LoadingImage';
 import { RulesEntry } from '@/components/RulesEntry';
+import { NoResults } from '@/components/NoResults';
 
 const MIN_QUERY_LENGTH = 3;
 
@@ -19,7 +20,7 @@ export const Divination: FC = () => {
   const fetchRules = useCallback(() => {
     startTransition(async () => {
       const rules = await getRulesByQuery(searchQuery);
-      if (rules.length > 0) setRules(rules);
+      setRules(rules);
     });
   }, [searchQuery]);
 
@@ -34,7 +35,10 @@ export const Divination: FC = () => {
   };
 
   const handleChange = (value: string) => {
-    if (!value) setRules([]);
+    if (!value) {
+      setRules([]);
+      setSearchQuery('');
+    }
   };
 
   return (
@@ -56,8 +60,9 @@ export const Divination: FC = () => {
           onChange={handleChange}
         />
       </div>
-      {!!rules.length && (
+      {searchQuery.length > 0 && (
         <RulesContainer centreContents={isPending}>
+          {!isPending && rules.length === 0 && <NoResults />}
           {isPending && (
             <div className='flex flex-col items-center justify-center gap-2'>
               <LoadingImage />

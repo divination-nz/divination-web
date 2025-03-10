@@ -8,7 +8,9 @@ export const getRulesByQuery = async (query: string): Promise<Rule[]> => {
   const urlQuery = DIVINATION_RULES_API + `/search?query=${encodedQueryString}`;
 
   const res = await fetch(urlQuery)
-    .then((response) => (response.body ? response.json() : []))
+    .then((response) =>
+      response.body && response.status === 200 ? response.json() : []
+    )
     .catch((error) => {
       console.error(error);
       return [];
