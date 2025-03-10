@@ -6,7 +6,7 @@ import { RulesContainer } from '@/components/RulesContainer';
 import { SearchBar } from '@/components/SearchBar';
 import { FC, useCallback, useEffect, useState, useTransition } from 'react';
 import Image from 'next/image';
-import { LoadingImage } from '@/components/LoadingImage';
+import { Loading } from '@/components/Loading';
 import { RulesEntry } from '@/components/RulesEntry';
 import { NoResults } from '@/components/NoResults';
 
@@ -62,13 +62,8 @@ export const Divination: FC = () => {
       </div>
       {searchQuery.length > 0 && (
         <RulesContainer centreContents={isPending}>
+          {isPending && <Loading />}
           {!isPending && rules.length === 0 && <NoResults />}
-          {isPending && (
-            <div className='flex flex-col items-center justify-center gap-2'>
-              <LoadingImage />
-              <p className='text-xl sm:text-2xl font-bold italic'>Loading...</p>
-            </div>
-          )}
           {!isPending &&
             rules.map((rule) => (
               <RulesEntry key={rule.id} rule={rule} markedText={searchQuery} />
