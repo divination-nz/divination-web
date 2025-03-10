@@ -11,3 +11,7 @@
     @apply h-full bg-base text-text;  
   }
 }
+
+mark {
+  @apply bg-peach
+}

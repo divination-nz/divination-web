@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 interface RulesEntryProps {
   rule: Rule;
+  markedText?: string;
 }
 
 const constructRulesUrl = (rule: Rule) => {
@@ -18,8 +19,16 @@ const constructRulesUrl = (rule: Rule) => {
   return `https://rules.cardspy.nz/#:~:text=${encodeURIComponent([formattedId, rule.description].join(' '))}`;
 };
 
-export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
+export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
+  console.log({ markedText });
+
   const rulesUrl = constructRulesUrl(rule);
+  const ruleDescription = !!markedText
+    ? rule.description.replace(
+        new RegExp(`(${markedText})`, 'gi'),
+        '<mark>$1</mark>'
+      )
+    : rule.description;
 
   return (
     <div className='relative flex-shrink-0 w-full min-h-16 sm:min-h-20 border-solid border-2 border-black dark:border-white'>
@@ -27,7 +36,7 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
         {rule.id}
       </div>
       <div className='flex flex-col items-start justify-between h-full w-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-[1rem] sm:leading-6'>
-        <div>{rule.description}</div>
+        <div dangerouslySetInnerHTML={{ __html: ruleDescription }} />
         <div className='text-blue'>
           <a
             href={rulesUrl}

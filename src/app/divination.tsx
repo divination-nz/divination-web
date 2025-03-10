@@ -70,7 +70,9 @@ export const Divination: FC = () => {
             </div>
           )}
           {!isPending &&
-            rules.map((rule) => <RulesEntry key={rule.id} rule={rule} />)}
+            rules.map((rule) => (
+              <RulesEntry key={rule.id} rule={rule} markedText={searchQuery} />
+            ))}
         </RulesContainer>
       )}
     </div>
