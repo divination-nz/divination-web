@@ -40,13 +40,13 @@ export const Divination: FC = () => {
       <div className='flex flex-col gap-4 sm:mx-10 items-center justify-center'>
         <Image
           aria-hidden
-          className='hidden sm:block invert dark:invert-0'
+          className='hidden sm:block'
           src='/planeswalker-book.svg'
           alt='Planeswalker Symbol on a Closed Book'
           width={150}
           height={150}
         />
-        <h1 className='text-7xl font-[family-name:var(--font-beleren)]'>
+        <h1 className='text-7xl font-[family-name:var(--font-beleren)] text-blue'>
           {'Divination'}
         </h1>
         <SearchBar

@@ -23,12 +23,12 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule }) => {
 
   return (
     <div className='relative flex-shrink-0 w-full min-h-16 sm:min-h-20 border-solid border-2 border-black dark:border-white'>
-      <div className='absolute top-0 right-0 flex justify-center text-sm sm:text-base bg-slate-300 dark:bg-slate-500 h-full font-bold [writing-mode:sideways-lr]'>
+      <div className='absolute top-0 right-0 flex justify-center text-sm sm:text-base sm:leading-6 text-mantle bg-blue h-full font-bold [writing-mode:sideways-lr]'>
         {rule.id}
       </div>
-      <div className='flex flex-col items-start justify-between h-full w-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-base'>
+      <div className='flex flex-col items-start justify-between h-full w-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-[1rem] sm:leading-6'>
         <div>{rule.description}</div>
-        <div className='text-blue-600 dark:text-blue-400'>
+        <div className='text-blue'>
           <a
             href={rulesUrl}
             target='_blank'

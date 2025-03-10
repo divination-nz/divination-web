@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import catppuccin from '@catppuccin/tailwindcss';
 
 export default {
   content: [
@@ -8,14 +9,14 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-      },
       fontFamily: {
         serif: ['var(--font-beleren)'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    catppuccin({
+      defaultFlavour: 'mocha',
+    }),
+  ],
 } satisfies Config;
