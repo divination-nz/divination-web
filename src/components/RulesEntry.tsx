@@ -31,7 +31,7 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
     : rule.description;
 
   return (
-    <div className='relative flex-shrink-0 w-full min-h-16 sm:min-h-20 border-solid border-2 border-black dark:border-white'>
+    <div className='relative flex-shrink-0 w-full min-h-16 sm:min-h-20 border-solid border-2 border-text'>
       <div className='absolute top-0 right-0 flex justify-center text-sm sm:text-base sm:leading-6 text-mantle bg-blue h-full font-bold [writing-mode:sideways-lr]'>
         {rule.id}
       </div>
