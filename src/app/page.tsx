@@ -7,7 +7,7 @@ export default async function Home() {
   const { os } = userAgent({ headers: await headers() });
 
   return (
-    <div className='flex flex-col items-center justify-between h-screen w-screen p-4 gap-2 overflow-hidden divide-y divide-solid divide-black dark:divide-white font-[family-name:var(--font-geist-sans)]'>
+    <div className='flex flex-col items-center justify-between h-screen w-screen p-4 gap-2 overflow-hidden divide-y divide-solid divide-text font-[family-name:var(--font-geist-sans)]'>
       <main className='flex flex-col h-[calc(100vh-5rem)] w-full justify-center'>
         <Divination />
       </main>
