@@ -8,15 +8,7 @@ interface RulesEntryProps {
 }
 
 const constructRulesUrl = (rule: Rule) => {
-  // Convoluted way to differentiate between
-  // - 101.1
-  // - 104.3a
-  // since the actual ID in the rulebook for the former is 101.1. (with the dot)
-  const formattedId = rule.id.charAt(rule.id.length - 1).match(/[a-z]/)
-    ? rule.id
-    : `${rule.id}.`;
-
-  return `https://rules.cardspy.nz/#:~:text=${encodeURIComponent([formattedId, rule.description].join(' '))}`;
+  return `https://rules.cardspy.nz/#:~:text=${encodeURIComponent([rule.id, rule.description].join(' '))}`;
 };
 
 export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
