@@ -12,10 +12,32 @@ import { NoResults } from '@/components/NoResults';
 
 const MIN_QUERY_LENGTH = 3;
 
-export const Divination: FC = () => {
+const updateUrl = (query: string) => {
+  const url = new URL(window.location.href);
+  url.searchParams.set('q', query);
+  window.history.pushState({}, '', url.toString());
+};
+
+const resetUrl = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('q');
+  window.history.pushState({}, '', url.toString());
+};
+
+interface DivinationProps {
+  initialQuery?: string;
+}
+
+export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
   const [rules, setRules] = useState<Rule[]>([]);
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>(initialQuery);
   const [isPending, startTransition] = useTransition();
+
+  const reset = () => {
+    setRules([]);
+    setSearchQuery('');
+    resetUrl();
+  };
 
   const fetchRules = useCallback(() => {
     startTransition(async () => {
@@ -31,13 +53,13 @@ export const Divination: FC = () => {
   const handleTypingComplete = (query: string) => {
     if (query.length >= MIN_QUERY_LENGTH) {
       setSearchQuery(query);
+      updateUrl(query);
     }
   };
 
   const handleChange = (value: string) => {
     if (!value) {
-      setRules([]);
-      setSearchQuery('');
+      reset();
     }
   };
 
@@ -56,6 +78,7 @@ export const Divination: FC = () => {
           {'Divination'}
         </h1>
         <SearchBar
+          defaultValue={searchQuery}
           onTypingComplete={handleTypingComplete}
           onChange={handleChange}
         />

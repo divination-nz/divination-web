@@ -7,11 +7,13 @@ import { type FC } from 'react';
 const INPUT_DELAY = 300;
 
 export interface SearchBarProps {
+  defaultValue?: string;
   onChange?: (value: string) => void;
   onTypingComplete?: (value: string) => void;
 }
 
 export const SearchBar: FC<SearchBarProps> = ({
+  defaultValue = '',
   onChange,
   onTypingComplete,
 }) => {
@@ -42,6 +44,7 @@ export const SearchBar: FC<SearchBarProps> = ({
         autoFocus
         className='font-[family-name:var(--font-geist-mono)] text-lg text-text bg-mantle px-9 py-0.5 rounded-lg [outline:none] border-2 border-solid border-surface2 hover:border-text focus:border-text w-full h-12'
         type='text'
+        defaultValue={defaultValue}
         onChange={handleChange}
         placeholder='Flying, haste, trample...'
       />
