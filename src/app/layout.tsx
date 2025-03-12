@@ -31,6 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <link
+        rel='search'
+        type='application/opensearchdescription+xml'
+        href='https://divination.cardspy.nz/opensearch.xml'
+        title='Divination'
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${belerenBold.variable} antialiased`}
       >

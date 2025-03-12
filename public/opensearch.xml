@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Divination</ShortName>
+  <Description>Search the rules of Magic: The Gathering</Description>
+  <Image width="32" height="32" type="image/x-icon">https://divination.cardspy.nz/icon.png</Image>
+  <Tags>Divination Magic The Gathering Rules Search</Tags>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Url method="get" rel="results" type="text/html"
+    template="https://divination.cardspy.nz/?q={searchTerms}" />
+  <Url rel="self" type="application/opensearchdescription+xml"
+    template="https://divination.cardspy.nz/opensearch.xml" />
+  <Language>en</Language>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>
