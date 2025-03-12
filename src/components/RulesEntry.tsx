@@ -17,7 +17,7 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
   const rulesUrl = constructRulesUrl(rule);
   const ruleDescription = !!markedText
     ? rule.description.replace(
-        new RegExp(`(${markedText})`, 'gi'),
+        new RegExp(`\\b(${markedText})\\b`, 'gi'),
         '<mark>$1</mark>'
       )
     : rule.description;
