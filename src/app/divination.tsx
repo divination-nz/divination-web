@@ -1,10 +1,16 @@
 'use client';
 
 import { getRulesByQuery } from '@/api/getRulesByQuery';
-import { Rule } from '@/api/types';
+import { type Rule } from '@/api/types';
 import { RulesContainer } from '@/components/RulesContainer';
 import { SearchBar } from '@/components/SearchBar';
-import { FC, useCallback, useEffect, useState, useTransition } from 'react';
+import {
+  type FC,
+  useCallback,
+  useEffect,
+  useState,
+  useTransition,
+} from 'react';
 import Image from 'next/image';
 import { Loading } from '@/components/Loading';
 import { RulesEntry } from '@/components/RulesEntry';

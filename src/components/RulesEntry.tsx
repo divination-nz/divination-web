@@ -1,6 +1,6 @@
-import { Rule } from '@/api/types';
+import { type Rule } from '@/api/types';
 import { Icon } from '@iconify/react';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 interface RulesEntryProps {
   rule: Rule;
