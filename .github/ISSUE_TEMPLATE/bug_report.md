@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: '[BUG] <The bug you found>'
+title: '[Bug] <The bug you found>'
 labels: bug
 assignees: ''
 ---
@@ -25,8 +25,8 @@ If applicable, add screenshots to help explain your problem.
 **Environment (please complete the following information):**
 
 - Device: [e.g. Desktop, Laptop, Phone]
-- Browser [e.g. chrome, firefox, safari]
-- OS: [e.g. Windows, Linux, IOS, Android]
+- Browser [e.g. Chrome, Firefox, Safari]
+- OS: [e.g. Windows, Linux, iOS, Android]
 
 **Additional context**
 Add any other context about the problem here.
