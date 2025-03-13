@@ -70,8 +70,8 @@ export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
   };
 
   return (
-    <div className='flex flex-col sm:flex-row flex-grow h-full w-full gap-4 items-stretch justify-start sm:justify-around'>
-      <div className='flex flex-col gap-4 sm:mx-10 items-center justify-center'>
+    <div className='flex h-full w-full flex-grow flex-col items-stretch justify-start gap-4 sm:flex-row sm:justify-around'>
+      <div className='flex flex-col items-center justify-center gap-4 sm:mx-10'>
         <Image
           aria-hidden
           className='hidden sm:block'
@@ -80,7 +80,7 @@ export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
           width={150}
           height={150}
         />
-        <h1 className='text-7xl font-[family-name:var(--font-beleren)] text-blue'>
+        <h1 className='font-[family-name:var(--font-beleren)] text-7xl text-blue'>
           {'Divination'}
         </h1>
         <SearchBar

@@ -23,11 +23,11 @@ export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
     : rule.description;
 
   return (
-    <div className='relative flex-shrink-0 w-full min-h-16 sm:min-h-20 border-solid border-2 border-text'>
-      <div className='absolute top-0 right-0 flex justify-center text-sm sm:text-base sm:leading-6 text-mantle bg-blue h-full font-bold [writing-mode:sideways-lr]'>
+    <div className='relative min-h-16 w-full flex-shrink-0 border-2 border-solid border-text sm:min-h-20'>
+      <div className='absolute right-0 top-0 flex h-full justify-center bg-blue text-sm font-bold text-mantle [writing-mode:sideways-lr] sm:text-base sm:leading-6'>
         {rule.id}
       </div>
-      <div className='flex flex-col items-start justify-between h-full w-full py-1 pl-1 pr-6 sm:pr-7 text-sm sm:text-[1rem] sm:leading-6'>
+      <div className='flex h-full w-full flex-col items-start justify-between py-1 pl-1 pr-6 text-sm sm:pr-7 sm:text-[1rem] sm:leading-6'>
         <div dangerouslySetInnerHTML={{ __html: ruleDescription }} />
         <div className='text-blue'>
           <a

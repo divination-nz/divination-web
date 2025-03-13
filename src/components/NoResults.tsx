@@ -1,9 +1,9 @@
 export const NoResults = () => (
-  <div className='flex flex-col items-center justify-center h-full w-full gap-2 p-4'>
-    <p className='text-[10rem] leading-[0.75] sm:leading-[1] font-[family-name:var(--font-beleren)] font-bold text-maroon'>
+  <div className='flex h-full w-full flex-col items-center justify-center gap-2 p-4'>
+    <p className='font-[family-name:var(--font-beleren)] text-[10rem] font-bold leading-[0.75] text-maroon sm:leading-[1]'>
       ?
     </p>
-    <p className='text-xl sm:text-2xl font-bold'>
+    <p className='text-xl font-bold sm:text-2xl'>
       No rules found. Try a different query, or{' '}
       <a
         href='https://rules.cardspy.nz'
@@ -14,7 +14,7 @@ export const NoResults = () => (
         check the rulebook.
       </a>
     </p>
-    <p className='text-lg sm:text-xl italic'>
+    <p className='text-lg italic sm:text-xl'>
       “The key to unlocking this puzzle is within you.” —Doriel, mentor of
       Mistral Isle
     </p>

@@ -16,8 +16,8 @@ export default async function Home({
   const { os } = userAgent({ headers: await headers() });
 
   return (
-    <div className='flex flex-col items-center justify-between h-screen w-screen p-4 gap-2 overflow-hidden divide-y divide-solid divide-text font-[family-name:var(--font-geist-sans)]'>
-      <main className='flex flex-col h-[calc(100vh-5rem)] w-full justify-center'>
+    <div className='flex h-screen w-screen flex-col items-center justify-between gap-2 divide-y divide-solid divide-text overflow-hidden p-4 font-[family-name:var(--font-geist-sans)]'>
+      <main className='flex h-[calc(100vh-5rem)] w-full flex-col justify-center'>
         <Divination initialQuery={query} />
       </main>
       <Footer showCopyleftIcon={!os.name?.includes('Windows')} />

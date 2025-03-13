@@ -13,7 +13,7 @@ export const RulesContainer: FC<RulesContainerProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col ${centreContents && 'items-center justify-center'} overflow-y-scroll overflow-x-hidden h-full w-full gap-2 p-2 border-solid border-2 border-text`}
+      className={`flex flex-col ${centreContents && 'items-center justify-center'} h-full w-full gap-2 overflow-x-hidden overflow-y-scroll border-2 border-solid border-text p-2`}
     >
       {children}
     </div>

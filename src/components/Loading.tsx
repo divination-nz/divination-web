@@ -10,6 +10,6 @@ export const Loading = () => (
       width={150}
       height={150}
     />
-    <p className='text-xl sm:text-2xl font-bold italic'>Loading...</p>
+    <p className='text-xl font-bold italic sm:text-2xl'>Loading...</p>
   </div>
 );

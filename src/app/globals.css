@@ -8,10 +8,10 @@
   body > div:first-child,
   div#__next,
   div#__next > div {
-    @apply h-full bg-base text-text;  
+    @apply h-full bg-base text-text;
   }
 }
 
 mark {
-  @apply bg-peach
+  @apply bg-peach;
 }
