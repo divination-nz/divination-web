@@ -4,11 +4,11 @@
 
 # Overview
 
-_Magic: The Gathering_ is widely known as a difficult and complex game. So complex, that it's even considered [turing complete](https://arxiv.org/abs/1904.09828). This complexity is not helped by the general inaccessibility of the comprehensive rules, with the latest version of the rules being only officially available in PDF, DOCX, or TXT format - with no way to search for specific rules.
+_Magic: The Gathering_ is widely known as a difficult and complex game. So complex, that it's even considered [turing complete](https://arxiv.org/abs/1904.09828). This complexity is not helped by the general inaccessibility of the comprehensive rules, with the latest version of the rules being [only officially available in PDF, DOCX, or TXT format](https://magic.wizards.com/en/rules) - with no way to search for specific rules.
 
-Enter **_Divination_**, a website for searching Magic: the Gathering's Comprehensive Rules. You can enter any search query, and instantly get a list of all of the rules that match your query. You can even jump from a given rule to a [hosted version of the Comprehensive Rules](https://github.com/card-spy/mtg-rules-html), and arrive exactly at the location where that rule is found.
+Enter **_Divination_**, a website for searching Magic: the Gathering's Comprehensive Rules. You can enter any search query, and instantly get a list of all of the rules that match. You can even jump from a given rule to a [hosted version of the Comprehensive Rules](https://github.com/card-spy/mtg-rules-html), and arrive exactly at the location where that rule is found.
 
-With **_Divination_**, you'll never miss a ruling again. Find your next ruling today: https://divination.cardspy.nz/.
+With **_Divination_**, you'll never miss a ruling again. Start searching today: https://divination.cardspy.nz/.
 
 # Features
 
