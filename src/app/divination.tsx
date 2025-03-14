@@ -57,9 +57,10 @@ export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
   }, [searchQuery, fetchRules]);
 
   const handleTypingComplete = (query: string) => {
-    if (query.length >= MIN_QUERY_LENGTH) {
-      setSearchQuery(query);
-      updateUrl(query);
+    const trimmedQuery = query.trim();
+    if (trimmedQuery.length >= MIN_QUERY_LENGTH) {
+      setSearchQuery(trimmedQuery);
+      updateUrl(trimmedQuery);
     }
   };
 
