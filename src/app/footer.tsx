@@ -18,11 +18,11 @@ export const Footer: FC<FooterProps> = ({ showCopyleftIcon = true }) => (
       View Github Repo
     </a>
     <div className='hidden h-full basis-1/2 items-center justify-center gap-2 sm:flex'>
-      <Link className='hover:underline' href='/'>
+      <Link className='hover:underline hover:underline-offset-4' href='/'>
         Home
       </Link>
       {' ∙ '}
-      <Link className='hover:underline' href='/about'>
+      <Link className='hover:underline hover:underline-offset-4' href='/about'>
         About
       </Link>
       {/* {' ∙ '}
@@ -35,7 +35,7 @@ export const Footer: FC<FooterProps> = ({ showCopyleftIcon = true }) => (
       </Link> */}
       {' ∙ '}
       <Link
-        className='hover:underline'
+        className='hover:underline hover:underline-offset-4'
         href='https://rules.cardspy.nz'
         target='_blank'
         rel='noopener noreferrer'
