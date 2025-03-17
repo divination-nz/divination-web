@@ -1,7 +1,7 @@
 export default async function About() {
   return (
-    <main className='flex w-full flex-col items-start justify-start gap-2 overflow-y-scroll lg:items-center lg:px-48'>
-      <h1 className='font-[family-name:var(--font-beleren)] text-3xl text-sky'>
+    <main className='flex w-full flex-col items-start justify-start gap-2 overflow-y-scroll lg:px-48'>
+      <h1 className='font-[family-name:var(--font-beleren)] text-4xl text-sky'>
         {'About'}
       </h1>
       <p className='text-left text-text'>
