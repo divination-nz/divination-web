@@ -76,7 +76,7 @@ export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
         <Image
           aria-hidden
           className='hidden sm:block'
-          src='/planeswalker-book.svg'
+          src='/divination-logo.svg'
           alt='Planeswalker Symbol on a Closed Book'
           width={150}
           height={150}
