@@ -30,11 +30,11 @@ const resetUrl = () => {
   window.history.pushState({}, '', url.toString());
 };
 
-interface DivinationProps {
+interface SearchClientProps {
   initialQuery?: string;
 }
 
-export const Divination: FC<DivinationProps> = ({ initialQuery = '' }) => {
+export const SearchClient: FC<SearchClientProps> = ({ initialQuery = '' }) => {
   const [rules, setRules] = useState<Rule[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>(initialQuery);
   const [isPending, startTransition] = useTransition();
