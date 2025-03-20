@@ -13,8 +13,8 @@ export const HomeClient: FC = () => {
   };
 
   return (
-    <div className='flex h-full w-full flex-grow items-stretch justify-around gap-4'>
-      <div className='flex flex-col items-center justify-center gap-4'>
+    <div className='flex h-full w-full flex-grow items-stretch justify-around'>
+      <div className='mt-[-5rem] flex flex-col items-center justify-center gap-4 sm:mt-0'>
         <Image
           aria-hidden
           src='/divination-logo.svg'
