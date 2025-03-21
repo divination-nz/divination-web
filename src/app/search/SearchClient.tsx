@@ -81,7 +81,7 @@ export const SearchClient: FC<SearchClientProps> = ({ initialQuery = '' }) => {
           width={150}
           height={150}
         />
-        <h1 className='font-[family-name:var(--font-beleren)] text-7xl text-blue'>
+        <h1 className='mr-28 font-[family-name:var(--font-beleren)] text-6xl text-blue sm:m-0 sm:text-7xl'>
           {'Divination'}
         </h1>
         <SearchBar

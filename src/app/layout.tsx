@@ -5,6 +5,7 @@ import { userAgent } from 'next/server';
 import { headers } from 'next/headers';
 import { Footer } from './footer';
 import './globals.css';
+import { Menu } from '@/components/Menu';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -44,6 +45,7 @@ export default async function RootLayout({
           {children}
           <Footer showCopyleftIcon={!os.name?.includes('Windows')} />
         </div>
+        <Menu />
       </body>
     </html>
   );
