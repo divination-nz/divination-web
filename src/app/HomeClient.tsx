@@ -1,14 +1,17 @@
 'use client';
 
-import { type FC } from 'react';
+import { useContext, type FC } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { BasicSearchBar } from '@/components/BasicSearchBar';
+import { MenuContext } from '@/components/MenuProvider';
 
 export const HomeClient: FC = () => {
   const router = useRouter();
+  const { setIsOpen } = useContext(MenuContext);
 
   const handleEnter = (query: string) => {
+    setIsOpen(false);
     router.push('/search?q=' + query);
   };
 

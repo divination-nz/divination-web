@@ -6,6 +6,7 @@ import { headers } from 'next/headers';
 import { Footer } from './footer';
 import './globals.css';
 import { Menu } from '@/components/Menu';
+import { MenuProvider } from '@/components/MenuProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,11 +42,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${belerenBold.variable} antialiased`}
       >
-        <div className='flex h-screen w-screen flex-col items-center justify-between gap-2 divide-y divide-solid divide-text overflow-hidden p-4 font-[family-name:var(--font-geist-sans)]'>
-          {children}
-          <Footer showCopyleftIcon={!os.name?.includes('Windows')} />
-        </div>
-        <Menu />
+        <MenuProvider>
+          <div className='flex h-screen w-screen flex-col items-center justify-between gap-2 divide-y divide-solid divide-text overflow-hidden p-4 font-[family-name:var(--font-geist-sans)]'>
+            {children}
+            <Footer showCopyleftIcon={!os.name?.includes('Windows')} />
+          </div>
+          <Menu />
+        </MenuProvider>
       </body>
     </html>
   );

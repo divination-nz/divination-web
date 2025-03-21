@@ -2,19 +2,28 @@
 
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
-import { type FC, useState } from 'react';
+import { type FC, useContext } from 'react';
+import { MenuContext } from './MenuProvider';
 
 interface MenuItemProps {
   href: string;
   label: string;
   icon: React.ReactNode;
   linkProps?: Omit<React.ComponentProps<typeof Link>, 'href'>;
+  onClick?: () => void;
 }
 
-const MenuItem: FC<MenuItemProps> = ({ href, icon, label, linkProps }) => (
+const MenuItem: FC<MenuItemProps> = ({
+  href,
+  icon,
+  label,
+  linkProps,
+  onClick,
+}) => (
   <Link
     className='flex items-center justify-start gap-2 p-1 hover:bg-surface2'
     href={href}
+    onClick={onClick}
     {...linkProps}
   >
     {icon}
@@ -23,7 +32,7 @@ const MenuItem: FC<MenuItemProps> = ({ href, icon, label, linkProps }) => (
 );
 
 export const Menu: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useContext(MenuContext);
 
   const toggleMenu = () => {
     setIsOpen((open) => !open);
@@ -55,16 +64,19 @@ export const Menu: FC = () => {
         </div>
         <div className='flex flex-col gap-2 text-2xl'>
           <MenuItem
+            onClick={() => setIsOpen(false)}
             href='/'
             label='Home'
             icon={<Icon icon='ic:baseline-home' width='32' height='32' />}
           />
           <MenuItem
+            onClick={() => setIsOpen(false)}
             href='/about'
             label='About'
             icon={<Icon icon='ic:round-info' width='32' height='32' />}
           />
           <MenuItem
+            onClick={() => setIsOpen(false)}
             href='https://rules.cardspy.nz'
             label='Rules'
             icon={<Icon icon='tabler:book-filled' width='32' height='32' />}
