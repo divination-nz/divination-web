@@ -15,6 +15,7 @@ import Image from 'next/image';
 import { Loading } from '@/components/Loading';
 import { RulesEntry } from '@/components/RulesEntry';
 import { NoResults } from '@/components/NoResults';
+import { useRouter } from 'next/navigation';
 
 const MIN_QUERY_LENGTH = 3;
 
@@ -38,6 +39,7 @@ export const SearchClient: FC<SearchClientProps> = ({ initialQuery = '' }) => {
   const [rules, setRules] = useState<Rule[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>(initialQuery);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const reset = () => {
     setRules([]);
@@ -81,7 +83,10 @@ export const SearchClient: FC<SearchClientProps> = ({ initialQuery = '' }) => {
           width={150}
           height={150}
         />
-        <h1 className='w-full font-[family-name:var(--font-beleren)] text-6xl text-blue sm:text-7xl'>
+        <h1
+          className='w-full cursor-pointer font-[family-name:var(--font-beleren)] text-6xl text-blue sm:text-7xl'
+          onClick={() => router.push('/')}
+        >
           {'Divination'}
         </h1>
         <SearchBar
