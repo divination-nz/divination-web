@@ -40,7 +40,7 @@ export default async function RootLayout({
         title='Divination'
       />
       <body
-        className={`${geistSans.variable} ${belerenBold.variable} antialiased`}
+        className={`${geistSans.variable} ${belerenBold.variable} relative antialiased`}
       >
         <MenuProvider>
           <div className='flex h-screen w-screen flex-col items-center justify-between gap-2 divide-y divide-solid divide-text overflow-hidden p-4 font-[family-name:var(--font-geist-sans)]'>
