@@ -36,7 +36,7 @@ export default async function RootLayout({
       <link
         rel='search'
         type='application/opensearchdescription+xml'
-        href='https://divination.cardspy.nz/opensearch.xml'
+        href='https://divination.nz/opensearch.xml'
         title='Divination'
       />
       <body

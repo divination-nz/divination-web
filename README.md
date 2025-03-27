@@ -8,7 +8,7 @@ _Magic: The Gathering_ is widely known as a difficult and complex game. So compl
 
 Enter **_Divination_**, a website for searching Magic: the Gathering's Comprehensive Rules. You can enter any search query, and instantly get a list of all of the rules that match. You can even jump from a given rule to a [hosted version of the Comprehensive Rules](https://github.com/card-spy/mtg-rules-html), and arrive exactly at the location where that rule is found.
 
-With **_Divination_**, you'll never miss a ruling again. Start searching today: https://divination.cardspy.nz/.
+With **_Divination_**, you'll never miss a ruling again. Start searching today: https://divination.nz/.
 
 # Features
 
