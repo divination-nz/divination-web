@@ -1,16 +1,39 @@
 import { Icon } from '@iconify/react';
 
+const GlossaryDescription = ({
+  description,
+  markedText,
+}: {
+  description: string;
+  markedText?: string;
+}) => {
+  const markedDescription = !!markedText
+    ? description.replace(
+        new RegExp(`\\b(${markedText})\\b`, 'gi'),
+        '<mark>$1</mark>'
+      )
+    : description;
+  const split = markedDescription.split('\n');
+
+  return (
+    <div>
+      {split.map((line, i) => (
+        <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
+      ))}
+    </div>
+  );
+};
+
 const GlossaryEntry = () => {
+  const description =
+    '1. Text on an object that explains what that object does or can do.\n2. An activated or triggered ability on the stack. This kind of ability is an object.\nSee rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”\n';
+
   return (
     <div className='w-full rounded-lg border-2 border-text p-2 text-text'>
       <h2 className='font-[family-name:var(--font-beleren)] text-2xl text-teal'>
         {'Ability'}
       </h2>
-      <pre className='whitespace-pre-wrap text-left font-[family-name:var(--font-geist-sans)] text-text'>
-        {
-          '1. Text on an object that explains what that object does or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.es or can do.\n2. An activated or triggered ability on the stack. This kind of ability is an object.\nSee rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”\n'
-        }
-      </pre>
+      <GlossaryDescription description={description} markedText='ability' />
     </div>
   );
 };
