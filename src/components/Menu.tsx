@@ -48,10 +48,10 @@ export const Menu: FC = () => {
       </div>
 
       <div
-        className={`absolute right-0 top-0 z-10 flex h-56 w-full flex-col gap-2 border-b-2 border-solid border-text bg-base duration-150 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`absolute right-0 top-0 z-10 flex h-[17rem] w-full flex-col gap-2 border-b-2 border-solid border-text bg-base duration-150 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div
-          className='ml-2 mr-4 mt-4 flex items-center justify-between'
+          className='ml-4 mr-4 mt-4 flex items-center justify-between'
           onClick={toggleMenu}
         >
           <h2 className='text-3xl text-maroon'>Navigation</h2>
@@ -62,7 +62,7 @@ export const Menu: FC = () => {
             height='48'
           />
         </div>
-        <div className='flex flex-col gap-2 text-2xl'>
+        <div className='ml-2 flex flex-col gap-2 text-2xl'>
           <MenuItem
             onClick={() => setIsOpen(false)}
             href='/'
@@ -74,6 +74,12 @@ export const Menu: FC = () => {
             href='/about'
             label='About'
             icon={<Icon icon='ic:round-info' width='32' height='32' />}
+          />
+          <MenuItem
+            onClick={() => setIsOpen(false)}
+            href='/glossary'
+            label='Glossary'
+            icon={<Icon icon='raphael:book' width='32' height='32' />}
           />
           <MenuItem
             onClick={() => setIsOpen(false)}

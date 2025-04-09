@@ -25,14 +25,13 @@ export const Footer: FC<FooterProps> = ({ showCopyleftIcon = true }) => (
       <Link className='hover:underline hover:underline-offset-4' href='/about'>
         About
       </Link>
-      {/* {' ∙ '}
-      <Link className='hover:underline' href='/search'>
-        Search
-      </Link>
       {' ∙ '}
-      <Link className='hover:underline' href='/glossary'>
+      <Link
+        className='hover:underline hover:underline-offset-4'
+        href='/glossary'
+      >
         Glossary
-      </Link> */}
+      </Link>
       {' ∙ '}
       <Link
         className='hover:underline hover:underline-offset-4'
