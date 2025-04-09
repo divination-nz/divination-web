@@ -12,8 +12,6 @@ const constructRulesUrl = (rule: Rule) => {
 };
 
 export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
-  console.log({ markedText });
-
   const rulesUrl = constructRulesUrl(rule);
   const ruleDescription = !!markedText
     ? rule.description.replace(
