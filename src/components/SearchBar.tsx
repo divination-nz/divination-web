@@ -48,6 +48,10 @@ export const SearchBar: FC<SearchBarProps> = ({
         onChange={handleChange}
         placeholder='Flying, haste, trample...'
       />
+      <select className='absolute right-3 h-full border-l-2 border-surface2 bg-transparent pl-2 text-right'>
+        <option className='h-full p-2'>TEXT</option>
+        <option className='h-full border-r-2 border-surface2 p-2'>ID</option>
+      </select>
     </div>
   );
 };
