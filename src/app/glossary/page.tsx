@@ -1,15 +1,10 @@
+import { getGlossary } from '@/api/getGlossary';
 import { GlossaryEntry } from '@/components/GlossaryEntry';
 import { Icon } from '@iconify/react';
 
-const GlossaryEntryExample = () => {
-  const title = 'Ability';
-  const description =
-    '1. Text on an object that explains what that object does or can do.\n2. An activated or triggered ability on the stack. This kind of ability is an object.\nSee rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”\n';
-
-  return <GlossaryEntry title={title} description={description} />;
-};
-
 export default async function Glossary() {
+  const glossary = await getGlossary();
+
   return (
     <main className='flex w-full flex-col items-start justify-start gap-2 overflow-y-scroll lg:px-48'>
       <h1 className='w-full font-[family-name:var(--font-beleren)] text-6xl text-blue sm:text-center sm:text-7xl'>
@@ -30,16 +25,13 @@ export default async function Glossary() {
         />
       </div>
       <div className='flex w-full flex-wrap gap-2 overflow-x-hidden overflow-y-scroll border-2 border-solid border-text p-2'>
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
-        <GlossaryEntryExample />
+        {glossary.map((term, index) => (
+          <GlossaryEntry
+            key={index}
+            title={term.term}
+            description={term.description}
+          />
+        ))}
       </div>
     </main>
   );
