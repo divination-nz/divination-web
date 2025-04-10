@@ -21,7 +21,7 @@ export const GlossaryDescription: FC<GlossaryDescriptionProps> = ({
   const splitDescription = markedDescription.split('\n');
 
   return (
-    <div>
+    <div className='text-sm sm:text-[1rem] sm:leading-6'>
       {splitDescription.map((line, i) => (
         <p key={i} dangerouslySetInnerHTML={{ __html: line }} />
       ))}
