@@ -15,7 +15,8 @@ export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
   const filteredGlossaryTerms = glossaryTerms.filter((term) => {
     const termText = term.term.toLowerCase();
     const descriptionText = term.description.toLowerCase();
-    return termText.includes(filter) || descriptionText.includes(filter);
+    const regex = new RegExp(`\\b${filter}\\b`, 'gi');
+    return regex.test(termText) || regex.test(descriptionText);
   });
 
   return (
