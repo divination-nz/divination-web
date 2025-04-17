@@ -48,6 +48,11 @@ export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
             markedText={filter}
           />
         ))}
+        {filteredGlossaryTerms.length == 0 && (
+          <div className='flex w-full items-center justify-center pt-4 text-center font-[family-name:var(--font-beleren)] text-9xl text-maroon'>
+            ?
+          </div>
+        )}
       </div>
     </div>
   );
