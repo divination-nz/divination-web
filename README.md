@@ -58,4 +58,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Iconify](https://iconify.design/)
-- [Divination API](https://divination-api.cardspy.nz/)
+- [Divination API](https://api.divination.nz/)
