@@ -2,6 +2,7 @@
 
 import { GlossaryTerm } from '@/api/types';
 import { GlossaryEntry } from '@/components/GlossaryEntry';
+import { createGlossaryFilterRegExp } from '@/utility/glossaryFilterRegExp';
 import { Icon } from '@iconify/react';
 import { useState, type FC } from 'react';
 
@@ -15,7 +16,7 @@ export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
   const filteredGlossaryTerms = glossaryTerms.filter((term) => {
     const termText = term.term.toLowerCase();
     const descriptionText = term.description.toLowerCase();
-    const regex = new RegExp(`\\b${filter}\\b`, 'gi');
+    const regex = createGlossaryFilterRegExp(filter);
     return regex.test(termText) || regex.test(descriptionText);
   });
 

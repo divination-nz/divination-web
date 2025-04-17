@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import { GlossaryDescription } from './GlossaryDescription';
+import { createGlossaryFilterRegExp } from '@/utility/glossaryFilterRegExp';
 
 interface GlossaryEntryProps {
   title: string;
@@ -13,10 +14,7 @@ export const GlossaryEntry: FC<GlossaryEntryProps> = ({
   markedText,
 }) => {
   const markedTitle = !!markedText
-    ? title.replace(
-        new RegExp(`\\b(${markedText})\\b`, 'gi'),
-        '<mark>$1</mark>'
-      )
+    ? title.replace(createGlossaryFilterRegExp(markedText), '<mark>$1</mark>')
     : title;
 
   return (
