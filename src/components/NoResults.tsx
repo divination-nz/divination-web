@@ -6,7 +6,7 @@ export const NoResults = () => (
     <p className='text-xl font-bold sm:text-2xl'>
       No rules found. Try a different query, or{' '}
       <a
-        href='https://rules.cardspy.nz'
+        href='https://rules.divination.nz'
         target='_blank'
         rel='noopener norefferer'
         className='text-blue underline sm:no-underline sm:hover:underline'

@@ -83,7 +83,7 @@ export const Menu: FC = () => {
           />
           <MenuItem
             onClick={() => setIsOpen(false)}
-            href='https://rules.cardspy.nz'
+            href='https://rules.divination.nz'
             label='Rules'
             icon={<Icon icon='tabler:book-filled' width='32' height='32' />}
             linkProps={{ target: '_blank', rel: 'noopener noreferrer' }}

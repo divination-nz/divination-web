@@ -35,7 +35,7 @@ export const Footer: FC<FooterProps> = ({ showCopyleftIcon = true }) => (
       {' ∙ '}
       <Link
         className='hover:underline hover:underline-offset-4'
-        href='https://rules.cardspy.nz'
+        href='https://rules.divination.nz'
         target='_blank'
         rel='noopener noreferrer'
       >

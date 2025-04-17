@@ -8,7 +8,7 @@ interface RulesEntryProps {
 }
 
 const constructRulesUrl = (rule: Rule) => {
-  return `https://rules.cardspy.nz/#:~:text=${encodeURIComponent([rule.id, rule.description].join(' '))}`;
+  return `https://rules.divination.nz/#:~:text=${encodeURIComponent([rule.id, rule.description].join(' '))}`;
 };
 
 export const RulesEntry: FC<RulesEntryProps> = ({ rule, markedText }) => {
