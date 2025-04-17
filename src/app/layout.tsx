@@ -20,8 +20,21 @@ const belerenBold = localFont({
 
 export const metadata: Metadata = {
   title: 'Divination',
-  description:
-    "Web app for searching Magic: the Gathering's Comprehensive Rules",
+  description: "Search Magic: the Gathering's Comprehensive Rules",
+  openGraph: {
+    title: 'Divination',
+    description: "Search Magic: the Gathering's Comprehensive Rules",
+    url: 'https://divination.nz',
+    images: [
+      {
+        url: 'https://divination.nz/icon.png',
+        width: 512,
+        height: 512,
+        alt: 'Planeswalker logo on book',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 export default async function RootLayout({
