@@ -54,7 +54,7 @@ export const Menu: FC = () => {
           className='ml-4 mr-4 mt-4 flex items-center justify-between'
           onClick={toggleMenu}
         >
-          <h2 className='text-3xl text-maroon'>Navigation</h2>
+          <h2 className='text-3xl text-maroon'>Menu</h2>
           <Icon
             className='cursor-pointer'
             icon='ic:round-close'
