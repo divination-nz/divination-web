@@ -5,7 +5,7 @@ import { DIVINATION_RULES_API, Rule } from './types';
 export const getRuleById = async (id: string): Promise<Rule> => {
   const urlQuery = DIVINATION_RULES_API + `/${id}`;
 
-  const res = await fetch(urlQuery)
+  const res = await fetch(urlQuery, { cache: 'force-cache' })
     .then((response) => (response.body ? response.json() : {}))
     .catch((error) => {
       console.error(error);
