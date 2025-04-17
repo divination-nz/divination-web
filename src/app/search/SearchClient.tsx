@@ -16,20 +16,9 @@ import { Loading } from '@/components/Loading';
 import { RulesEntry } from '@/components/RulesEntry';
 import { NoResults } from '@/components/NoResults';
 import { useRouter } from 'next/navigation';
+import { resetUrl, updateUrl } from '@/utility/urlHandling';
 
 const MIN_QUERY_LENGTH = 3;
-
-const updateUrl = (query: string) => {
-  const url = new URL(window.location.href);
-  url.searchParams.set('q', query);
-  window.history.pushState({}, '', url.toString());
-};
-
-const resetUrl = () => {
-  const url = new URL(window.location.href);
-  url.searchParams.delete('q');
-  window.history.pushState({}, '', url.toString());
-};
 
 interface SearchClientProps {
   initialQuery?: string;

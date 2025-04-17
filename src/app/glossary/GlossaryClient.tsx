@@ -3,15 +3,20 @@
 import { GlossaryTerm } from '@/api/types';
 import { GlossaryEntry } from '@/components/GlossaryEntry';
 import { createGlossaryFilterRegExp } from '@/utility/glossaryFilterRegExp';
+import { resetUrl, updateUrl } from '@/utility/urlHandling';
 import { Icon } from '@iconify/react';
 import { useState, type FC } from 'react';
 
 interface GlossaryClientProps {
   glossaryTerms: GlossaryTerm[];
+  initialFilter?: string;
 }
 
-export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
-  const [filter, setFilter] = useState<string>('');
+export const GlossaryClient: FC<GlossaryClientProps> = ({
+  glossaryTerms,
+  initialFilter = '',
+}) => {
+  const [filter, setFilter] = useState<string>(initialFilter);
 
   const filteredGlossaryTerms = glossaryTerms.filter((term) => {
     const termText = term.term.toLowerCase();
@@ -19,6 +24,15 @@ export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
     const regex = createGlossaryFilterRegExp(filter);
     return regex.test(termText) || regex.test(descriptionText);
   });
+
+  const handleChange = (value: string) => {
+    if (!value) {
+      resetUrl();
+    } else {
+      updateUrl(value);
+    }
+    setFilter(value);
+  };
 
   return (
     <div className='flex h-full w-full flex-col gap-2'>
@@ -37,7 +51,8 @@ export const GlossaryClient: FC<GlossaryClientProps> = ({ glossaryTerms }) => {
           className='h-12 w-full rounded-lg border-2 border-solid border-surface2 bg-mantle px-9 py-0.5 font-[family-name:var(--font-geist-sans)] text-lg text-text [outline:none] hover:border-text focus:border-text'
           type='text'
           placeholder='APNAP, keyword ability, subtype...'
-          onChange={(e) => setFilter(e.target.value)}
+          defaultValue={initialFilter}
+          onChange={(e) => handleChange(e.target.value)}
         />
       </div>
       <div className='flex w-full flex-wrap gap-2 overflow-x-hidden overflow-y-scroll border-2 border-solid border-text p-2'>
