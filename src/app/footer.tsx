@@ -10,7 +10,7 @@ export const Footer: FC<FooterProps> = ({ showCopyleftIcon = true }) => (
   <footer className='flex w-full flex-row flex-wrap items-center justify-between p-2 text-sm sm:text-[1rem]'>
     <a
       className='flex items-center justify-start gap-2 hover:underline hover:underline-offset-4 sm:basis-1/4'
-      href='https://github.com/card-spy/divination-web'
+      href='https://github.com/divination-nz/divination-web'
       target='_blank'
       rel='noopener noreferrer'
     >
