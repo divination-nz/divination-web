@@ -9,6 +9,7 @@ on:
       - '.github/ISSUE_TEMPLATE/**'
       - '.vscode/**'
       - 'LICENSE'
+  workflow_dispatch:
 
 jobs:
   publish:
