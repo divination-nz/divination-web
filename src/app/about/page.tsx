@@ -1,10 +1,10 @@
 export default async function About() {
   return (
-    <main className='flex w-full flex-col items-start justify-start overflow-y-scroll lg:px-48'>
+    <main className='flex w-full flex-col items-start justify-start overflow-auto lg:px-48'>
       <h1 className='w-full font-[family-name:var(--font-beleren)] text-6xl text-blue sm:text-center sm:text-7xl'>
         {'About'}
       </h1>
-      <div className='flex flex-col gap-1 overflow-y-scroll sm:gap-2'>
+      <div className='flex flex-col gap-1 overflow-auto sm:gap-2'>
         <p className='text-left text-text'>
           <b>{'Divination'}</b>{' '}
           {
